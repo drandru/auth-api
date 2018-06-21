@@ -1,0 +1,3 @@
+services:
+    login.action.login:
+        class: Api\Auth\v1\LoginBundle\Action\Login

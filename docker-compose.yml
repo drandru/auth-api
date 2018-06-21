@@ -1,0 +1,57 @@
+version: '3.2'
+
+networks:
+    drd:
+        external:
+            name: drd
+
+volumes:
+    db_volume:
+        driver: local
+
+services:
+    frontend-api:
+        container_name: auth-frontend-api
+        build:
+            context: .
+            dockerfile: .deploy/docker/local/frontend-api/Dockerfile
+        env_file:
+            - .env
+        ports:
+            - 8081:80
+        volumes:
+            - ./backend-api:/app/backend-api:ro
+            - ./.env:/app/backend-api/.env:ro
+        networks:
+          - drd
+        depends_on:
+          - backend-api
+
+    backend-api:
+        container_name: auth-backend-api
+        build:
+            context: .
+            dockerfile: .deploy/docker/local/backend-api/Dockerfile
+        restart: unless-stopped
+        env_file:
+            - .env
+        volumes:
+            - ./backend-api:/app/backend-api:rw
+            - ./.env:/app/backend-api/.env:ro
+        networks:
+            - drd
+        depends_on:
+            - database
+
+    database:
+        container_name: auth-database
+        build:
+            context: .
+            dockerfile: .deploy/docker/local/database/Dockerfile
+        restart: unless-stopped
+        environment:
+            POSTGRES_PASSWORD: 'ipa_root'
+        networks:
+            - drd
+        volumes:
+            - db_volume:/var/lib/postgresql/data

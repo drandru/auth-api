@@ -1,0 +1,7 @@
+services:
+    login.request.transformer.login:
+        class: Api\Auth\v1\LoginBundle\Request\Transformer\Login
+        arguments:
+            - '@drd.object_builder'
+            - '@validator'
+

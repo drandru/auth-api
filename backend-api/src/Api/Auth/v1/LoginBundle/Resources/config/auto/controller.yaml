@@ -1,0 +1,9 @@
+services:
+    login.controller.login:
+        class: DRD\GeneralBundle\Controller\CatchableGeneralController
+        tags: [ 'controller.service_arguments' ]
+        arguments:
+            - '@login.request.transformer.login'
+            - '@login.action.login'
+            - '@drd.response.transformer.json'
+            - '@drd.exception.transformer.fabric'

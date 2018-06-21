@@ -1,0 +1,15 @@
+2018-06-21 18:37:22,287 INFO supervisord started with pid 1
+2018-06-21 18:37:23,291 INFO spawned: 'php-fpm' with pid 14
+2018-06-21 18:37:24,673 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-06-21 18:42:00,690 WARN received SIGTERM indicating exit request
+2018-06-21 18:42:00,691 INFO waiting for php-fpm to die
+2018-06-21 18:42:00,698 INFO stopped: php-fpm (exit status 0)
+2018-06-21 18:46:15,553 INFO supervisord started with pid 1
+2018-06-21 18:46:16,556 INFO spawned: 'php-fpm' with pid 15
+2018-06-21 18:46:17,767 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-06-21 18:47:28,570 WARN received SIGTERM indicating exit request
+2018-06-21 18:47:28,570 INFO waiting for php-fpm to die
+2018-06-21 18:47:28,583 INFO stopped: php-fpm (exit status 0)
+2018-06-21 18:47:39,668 INFO supervisord started with pid 1
+2018-06-21 18:47:40,672 INFO spawned: 'php-fpm' with pid 14
+2018-06-21 18:47:41,742 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

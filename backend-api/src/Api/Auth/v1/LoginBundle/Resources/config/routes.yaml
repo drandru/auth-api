@@ -1,0 +1,5 @@
+login.login:
+  path: /
+  defaults:
+      _controller: login.controller.login:usualAction
+  methods: [POST]
